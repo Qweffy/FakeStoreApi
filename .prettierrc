@@ -1,0 +1,24 @@
+{
+  "bracketSpacing": true,
+  "semi": false,
+  "printWidth": 120,
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSameLine": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "plugins": ["prettier-plugin-import-sort"],
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^services/(.*)$",
+    "^components/(.*)$",
+    "^pages/(.*)$",
+    "^models/(.*)$",
+    "^utils/(.*)$",
+    "^styles/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

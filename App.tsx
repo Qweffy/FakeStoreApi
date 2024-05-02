@@ -1,15 +1,20 @@
 import React from 'react'
 import * as eva from '@eva-design/eva'
-import { ApplicationProvider, Layout, Text } from '@ui-kitten/components'
+import { ApplicationProvider, IconRegistry } from '@ui-kitten/components'
+import { EvaIconsPack } from '@ui-kitten/eva-icons'
+import mockData from './mockData.json'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+import Home from '@pages/Home'
 
-const HomeScreen = () => (
-    <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text category='h1'>HOME</Text>
-    </Layout>
-)
-
-export default function() {
-  return <ApplicationProvider {...eva} theme={eva.light}>
-      <HomeScreen />
-    </ApplicationProvider>
+const MyApp = () => {
+  return (
+    <SafeAreaProvider>
+      <IconRegistry icons={EvaIconsPack} />
+      <ApplicationProvider {...eva} theme={eva.light}>
+        <Home products={mockData}/>
+      </ApplicationProvider>
+    </SafeAreaProvider>
+  )
 }
+
+export default MyApp

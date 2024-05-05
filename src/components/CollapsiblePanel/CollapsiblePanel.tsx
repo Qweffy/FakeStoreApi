@@ -3,8 +3,9 @@ import React, { useState } from 'react'
 import { Layout, Text, Button, Card } from '@ui-kitten/components'
 import { Image } from 'react-native'
 import { ArrowIcon } from './CollapsiblePanel.components'
+import { CollapsiblePanelProps } from './CollapsiblePanel.types'
 
-export const CollapsiblePanel = ({ product }: { product: Product }) => {
+export const CollapsiblePanel = ({ product }: CollapsiblePanelProps) => {
   const [expanded, setExpanded] = useState(false)
 
   const toggleExpanded = () => {

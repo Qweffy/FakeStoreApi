@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import Product from '@models/Products'
-import { RootState } from '../store/store'
+import { RootState } from '@store/store'
 interface ProductsState {
   products: Product[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';

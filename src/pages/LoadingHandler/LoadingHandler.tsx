@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Image, ImageBackground, StatusBar, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Spinner } from '@ui-kitten/components'
+import { Spinner, Modal, Button, Card, Text } from '@ui-kitten/components'
 import { useDispatch } from 'react-redux'
 import styles from './LoadingHandler.styles'
 import { LoadingHandlerProps, SplashProps } from './LoadingHandler.types'
-import { useGetProductsQuery } from '../../store/services/products'
-import { productsReceived } from '../../features/productsSlice'  // Asegúrate de importar la acción correcta
+import { useGetProductsQuery } from '@store/services/products'
+import { productsFailed, productsReceived } from '@features/productsSlice'
+import { getErrorMessage } from '@pages/LoadingHandler/LoadingHandler.utils'
 
 const Logo = require('../../assets/logo.png')
 const LoadingScreenBackground = require('../../assets/loading-screen-background.png')
@@ -23,18 +24,41 @@ const Splash = ({ showSpinner }: SplashProps) => (
 
 export const LoadingHandler = ({ children }: LoadingHandlerProps) => {
   const dispatch = useDispatch()
-  const { data, isLoading } = useGetProductsQuery()
+  const [errorModalVisible, setErrorModalVisible] = useState(false)
+  const {
+    data: products,
+    isLoading: isLoadingProducts,
+    isError: isProductsError,
+    error: productsError
+  } = useGetProductsQuery()
 
   useEffect(() => {
-    if (data && !isLoading) {
-      dispatch(productsReceived(data))
+    if (products && !isLoadingProducts && !isProductsError) {
+      dispatch(productsReceived(products))
+    } else if (isProductsError && productsError) {
+      dispatch(productsFailed(getErrorMessage(productsError)))
+      setErrorModalVisible(true)
     }
-  }, [data, isLoading, dispatch])
+  }, [products, isLoadingProducts, isProductsError, productsError, dispatch])
 
   return (
     <View style={styles.container}>
       {children}
-      {isLoading && <Splash showSpinner={true} />}
+      {isLoadingProducts && <Splash showSpinner={true} />}
+      <Modal
+        visible={errorModalVisible}
+        backdropStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.5)'}}
+        onBackdropPress={() => setErrorModalVisible(false)}>
+        <Card disabled={true}>
+          <Text category="h6" status="danger">Error</Text>
+          <Text>{getErrorMessage(productsError)}</Text>
+          <Button onPress={() => setErrorModalVisible(false)}>
+            <Text>Dismiss</Text>
+          </Button>
+        </Card>
+      </Modal>
     </View>
   )
 }
+
+export default LoadingHandler

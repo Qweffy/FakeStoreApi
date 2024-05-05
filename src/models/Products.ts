@@ -1,9 +1,9 @@
-type ProductRating = {
+interface ProductRating  {
   rate: number;
   count: number;
-};
+}
 
-type Product = {
+interface Product  {
   id: number;
   title: string;
   price: number;
@@ -11,5 +11,6 @@ type Product = {
   category: string;
   image: string;
   rating: ProductRating;
-};
+}
 
+export default Product

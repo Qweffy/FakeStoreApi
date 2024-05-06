@@ -10,15 +10,12 @@ import { productsFailed, productsReceived } from '@features/productsSlice'
 import { getErrorMessage } from '@pages/LoadingHandler/LoadingHandler.utils'
 
 const Logo = require('../../assets/logo.png')
-const LoadingScreenBackground = require('../../assets/loading-screen-background.png')
 
 const Splash = ({ showSpinner }: SplashProps) => (
   <SafeAreaView style={[styles.splash, styles.contentContainer]} edges={['top', 'right', 'left']}>
-    <ImageBackground source={LoadingScreenBackground} style={styles.contentContainer}>
       <StatusBar barStyle={'dark-content'} />
       <Image source={Logo} style={{ alignSelf: 'center' }} />
       {showSpinner && <Spinner size="giant" />}
-    </ImageBackground>
   </SafeAreaView>
 )
 

@@ -13,12 +13,11 @@ export default StyleSheet.create<LoadingHandlerStyles>({
   },
   contentContainer: {
     alignItems: 'center',
-    bottom: 0,
     flex: 1,
-    left: 0,
+    left:0,
     position: 'absolute',
-    right: 0,
-    top: 0,
+    right:0,
+    top: 100,
   },
   splash: {
     zIndex: 1000,

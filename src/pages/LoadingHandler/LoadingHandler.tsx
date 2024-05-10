@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Image, ImageBackground, StatusBar, View } from 'react-native'
+import { Image, StatusBar, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Spinner, Modal, Button, Card, Text } from '@ui-kitten/components'
 import { useDispatch } from 'react-redux'

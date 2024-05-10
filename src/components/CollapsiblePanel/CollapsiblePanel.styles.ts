@@ -1,8 +1,11 @@
 import { StyleSheet } from 'react-native'
+import { brandColor } from '@styles/Colors'
+import { xSmallSpace } from '@styles/Spacing'
+import { bodyBold, bodyRegular, h5Headline } from '@styles/Fonts'
 
 export default StyleSheet.create({
   card: {
-    backgroundColor: '#E9E8E8',
+    backgroundColor: brandColor,
     borderRadius: 10,
     elevation: 3,
     margin: 12,
@@ -12,13 +15,13 @@ export default StyleSheet.create({
   },
   collapsedLayout: {
     alignItems: 'center',
-    backgroundColor: '#E9E8E8',
+    backgroundColor: brandColor,
     flexDirection: 'row',
     justifyContent: 'flex-start',
   },
   detailContainer: {
     alignItems: 'center',
-    backgroundColor: '#E9E8E8',
+    backgroundColor: brandColor,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     width: '100%',
@@ -31,16 +34,14 @@ export default StyleSheet.create({
   },
   expandedLayout: {
     alignItems: 'center',
-    backgroundColor: '#E9E8E8',
+    backgroundColor: brandColor,
     flexDirection: 'column',
-    gap: 8,
+    gap: xSmallSpace,
   },
   expandedTitle: {
-    color: '#333',
-    fontSize: 24,
-    fontWeight: 'bold',
+    ...h5Headline,
   },
-  icon:{ height:32, marginLeft:-16, width:32 },
+  icon: { height: 32, marginLeft: -16, width: 32 },
   image: {
     borderRadius: 12,
     height: 75,
@@ -48,23 +49,17 @@ export default StyleSheet.create({
     width: 75,
   },
   label: {
-    color: '#333',
-    fontSize: 14,
-    fontWeight: 'bold',
+    ...bodyBold,
   },
   text: {
-    color: '#666',
-    fontSize: 14,
+    ...bodyRegular,
   },
   title: {
-    color: '#333',
     flexShrink: 1,
-    fontSize: 20,
-    fontWeight: 'bold',
+    ...h5Headline,
   },
   value: {
-    color: '#666',
-    fontSize: 14,
+    ...bodyRegular,
     marginLeft: 8,
   },
 })

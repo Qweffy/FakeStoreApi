@@ -1,4 +1,5 @@
 import { StyleSheet, ViewStyle } from 'react-native'
+import { smallSpace } from '@styles/Spacing'
 
 type CategorySelectorStyleType = {
   container: ViewStyle
@@ -6,6 +7,6 @@ type CategorySelectorStyleType = {
 
 export default StyleSheet.create<CategorySelectorStyleType>({
   container: {
-    margin:10,
+    margin: smallSpace,
   },
 })

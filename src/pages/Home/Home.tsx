@@ -9,6 +9,7 @@ import { useProductFilter } from '@hooks/useProductFilter'
 import { IndexPath } from '@ui-kitten/components'
 import Product from '@models/Products'
 import { useGetCategoriesQuery } from '@store/services/products'
+import styles from './Home.styles'
 
 export const Home = () => {
   const dispatch = useDispatch()
@@ -40,7 +41,7 @@ export const Home = () => {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.container}>
       <CategorySelector categories={categories} selectedCategory={selectedCategory} onChange={handleCategoryChange} />
       <FlatList
         data={displayedProducts}

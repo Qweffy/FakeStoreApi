@@ -7,6 +7,7 @@ type LoadingHandlerStyles = {
 }
 
 export default StyleSheet.create<LoadingHandlerStyles>({
+  // eslint-disable-next-line react-native/no-color-literals
   container: {
     backgroundColor: 'transparent',
     flex: 1,

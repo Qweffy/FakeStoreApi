@@ -8,7 +8,9 @@
   "singleQuote": true,
   "trailingComma": "all",
   "arrowParens": "always",
-  "plugins": ["prettier-plugin-import-sort"],
+  "plugins": [
+    "prettier-plugin-import-sort"
+  ],
   "importOrder": [
     "<THIRD_PARTY_MODULES>",
     "^services/(.*)$",

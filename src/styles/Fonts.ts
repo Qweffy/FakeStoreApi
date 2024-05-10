@@ -14,6 +14,29 @@ const h2Headline: TextStyle = {
   letterSpacing: 0,
 }
 
+const h3Headline: TextStyle = {
+  fontFamily: 'Nunito',
+  fontWeight: '300',
+  fontSize: 48,
+  letterSpacing: 0,
+}
+
+
+const h4Headline: TextStyle = {
+  fontFamily: 'Nunito',
+  fontWeight: 'bold',
+  fontSize: 34,
+  letterSpacing: 0,
+}
+
+
+const h5Headline: TextStyle = {
+  fontFamily: 'Nunito',
+  fontWeight: 'bold',
+  fontSize: 24,
+  letterSpacing: 0,
+}
+
 const bodyRegular: TextStyle = {
   fontFamily: 'Montserrat',
   fontSize: 16,
@@ -34,4 +57,4 @@ const caption: TextStyle = {
   lineHeight: 18,
 }
 
-export { h1Headline, h2Headline, bodyRegular, caption, bodyBold }
+export { h1Headline, h2Headline, bodyRegular, caption, bodyBold, h5Headline, h3Headline, h4Headline }

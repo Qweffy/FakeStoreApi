@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import { brandColor } from '@styles/Colors'
 import { xSmallSpace } from '@styles/Spacing'
-import { bodyBold, bodyRegular, h2Headline } from '@styles/Fonts'
+import { bodyBold, bodyRegular, h5Headline } from '@styles/Fonts'
 
 export default StyleSheet.create({
   card: {
@@ -39,7 +39,7 @@ export default StyleSheet.create({
     gap: xSmallSpace,
   },
   expandedTitle: {
-    ...h2Headline,
+    ...h5Headline,
   },
   icon: { height: 32, marginLeft: -16, width: 32 },
   image: {
@@ -56,7 +56,7 @@ export default StyleSheet.create({
   },
   title: {
     flexShrink: 1,
-    ...h2Headline,
+    ...h5Headline,
   },
   value: {
     ...bodyRegular,

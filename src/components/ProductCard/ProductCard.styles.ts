@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native'
 import { brandColor } from '@styles/Colors'
-import { xSmallSpace } from '@styles/Spacing'
 import { bodyBold, bodyRegular, h5Headline } from '@styles/Fonts'
 
 export default StyleSheet.create({
@@ -25,21 +24,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     width: '100%',
-  },
-  expandedImage: {
-    aspectRatio: 1,
-    borderRadius: 12,
-    height: undefined,
-    width: '100%',
-  },
-  expandedLayout: {
-    alignItems: 'center',
-    backgroundColor: brandColor,
-    flexDirection: 'column',
-    gap: xSmallSpace,
-  },
-  expandedTitle: {
-    ...h5Headline,
   },
   icon: { height: 32, marginLeft: -16, width: 32 },
   image: {

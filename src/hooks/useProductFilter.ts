@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { selectAllProducts } from '@features/productsSlice'
-import Product from '@models/Products'
+import { Product } from '@models/Products'
 
 export const useProductFilter = (selectedCategory: string | null, displayLimit: number): Product[] => {
   const allProducts: Product[] = useSelector(selectAllProducts)

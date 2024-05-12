@@ -1,5 +1,5 @@
-import Product from '@models/Products'
+import { Product } from '@models/Products'
 
 export type ProductCardProps = {
-  product:Product
+  product: Product
 }

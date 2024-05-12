@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import Product from '@models/Products'
+import { Product } from '@models/Products'
 import { RootState } from '@store/store'
+
 interface ProductsState {
   products: Product[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
@@ -31,10 +32,14 @@ export const productsSlice = createSlice({
   }
 })
 
+// Action creators are generated for each case reducer function
 export const { productsLoading, productsReceived, productsFailed } = productsSlice.actions
 
 export default productsSlice.reducer
 
+// Selectors
 export const selectAllProducts = (state: RootState) => state.products.products
+export const selectProductById = (state: RootState, productId: number) =>
+  state.products.products.find(product => product.id === productId)
 export const selectProductsStatus = (state: RootState) => state.products.status
 export const selectProductsError = (state: RootState) => state.products.error

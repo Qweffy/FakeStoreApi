@@ -3,10 +3,10 @@ import * as eva from '@eva-design/eva'
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components'
 import { EvaIconsPack } from '@ui-kitten/eva-icons'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-import Home from '@pages/Home'
 import { store } from '@store/store'
 import { Provider } from 'react-redux'
 import { LoadingHandler } from '@pages/LoadingHandler/LoadingHandler'
+import { AppNavigator } from './src/navigation'
 
 const MyApp = () => {
   return (
@@ -15,7 +15,7 @@ const MyApp = () => {
       <ApplicationProvider {...eva} theme={eva.light}>
         <Provider store={store}>
           <LoadingHandler>
-            <Home/>
+            <AppNavigator />
           </LoadingHandler>
         </Provider>
       </ApplicationProvider>

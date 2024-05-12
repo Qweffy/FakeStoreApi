@@ -4,6 +4,8 @@ import { NavigationProp, useNavigation, useNavigationState } from '@react-naviga
 import { RootStackParamList } from '@models/navigationTypes'
 import styles from './TopNavigator.styles'
 import { CartBadgeProps, TopNavigatorProps } from '@navigation/navigators/TopNavigator/TopNavigator.types'
+import { useSelector } from 'react-redux'
+import { RootState } from '@store/store'
 
 const CartBadge = ({ cartItemCount }: CartBadgeProps) => {
   return cartItemCount > 0 && (
@@ -18,6 +20,7 @@ export const TopNavigator = ({ showCart = true }: TopNavigatorProps) => {
 
   const navigateBack = () => canGoBack && navigation.goBack()
   const navigateToCart = () => navigation.navigate('Cart')
+  const cartItemCount = useSelector((state: RootState) => state.cart.cartItemCount)
 
   return (
     <Layout>
@@ -29,7 +32,7 @@ export const TopNavigator = ({ showCart = true }: TopNavigatorProps) => {
           <TopNavigationAction
             icon={<Fragment>
               <Icon name={'shopping-cart-outline'} style={styles.icon} />
-              <CartBadge cartItemCount={3} />
+              <CartBadge cartItemCount={cartItemCount} />
             </Fragment>}
             onPress={navigateToCart}>
 

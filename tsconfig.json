@@ -16,6 +16,9 @@
       "@models/*": [
         "src/models/*"
       ],
+      "@navigation/*": [
+        "src/navigation/*"
+      ],
       "@pages/*": [
         "src/pages/*"
       ],

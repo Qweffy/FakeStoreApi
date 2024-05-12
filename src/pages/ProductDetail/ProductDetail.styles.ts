@@ -1,23 +1,23 @@
-import { StyleSheet } from 'react-native'
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { smallSpace, xSmallSpace } from '@styles/Spacing'
 import { brandColor } from '@styles/Colors'
-import { xSmallSpace } from '@styles/Spacing'
 import { bodyBold, bodyRegular, h5Headline } from '@styles/Fonts'
 
-export default StyleSheet.create({
-  card: {
-    backgroundColor: brandColor,
-    borderRadius: 10,
-    elevation: 3,
-    margin: 12,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-  },
-  collapsedLayout: {
-    alignItems: 'center',
-    backgroundColor: brandColor,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
+type ProductDetailStyleType = {
+  container: ViewStyle
+  expandedImage: ImageStyle
+  expandedLayout: ViewStyle
+  expandedTitle: TextStyle
+  icon: ViewStyle
+  text: TextStyle
+  detailContainer: ViewStyle
+  label: TextStyle
+  value: TextStyle
+}
+
+export default StyleSheet.create<ProductDetailStyleType>({
+  container: {
+    margin: smallSpace,
   },
   detailContainer: {
     alignItems: 'center',
@@ -42,21 +42,11 @@ export default StyleSheet.create({
     ...h5Headline,
   },
   icon: { height: 32, marginLeft: -16, width: 32 },
-  image: {
-    borderRadius: 12,
-    height: 75,
-    marginRight: 16,
-    width: 75,
-  },
   label: {
     ...bodyBold,
   },
   text: {
     ...bodyRegular,
-  },
-  title: {
-    flexShrink: 1,
-    ...h5Headline,
   },
   value: {
     ...bodyRegular,

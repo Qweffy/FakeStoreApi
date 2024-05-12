@@ -1,5 +1,5 @@
 import Product from '@models/Products'
 
-export type CollapsiblePanelProps = {
+export type ProductCardProps = {
   product:Product
 }

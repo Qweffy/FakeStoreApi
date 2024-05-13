@@ -23,7 +23,7 @@ const h3Headline: TextStyle = {
 
 
 const h4Headline: TextStyle = {
-  fontFamily: 'Nunito',
+  fontFamily: 'Montserrat',
   fontWeight: 'bold',
   fontSize: 34,
   letterSpacing: 0,
@@ -31,7 +31,7 @@ const h4Headline: TextStyle = {
 
 
 const h5Headline: TextStyle = {
-  fontFamily: 'Nunito',
+  fontFamily: 'Montserrat',
   fontWeight: 'bold',
   fontSize: 24,
   letterSpacing: 0,

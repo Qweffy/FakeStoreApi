@@ -1,7 +1,10 @@
 import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { PrimaryColors } from '@styles/Colors'
 
 type TopNavigatorStyleType = {
-  icon: ViewStyle
+  container: ViewStyle
+  iconBack: ViewStyle
+  iconCart: ViewStyle
   cartContainer: ViewStyle
   cartText: TextStyle
 }
@@ -9,16 +12,17 @@ type TopNavigatorStyleType = {
 export default StyleSheet.create<TopNavigatorStyleType>({
   cartContainer: {
     alignItems: 'center',
-    backgroundColor: 'red',
+    backgroundColor: PrimaryColors.Danger,
     borderRadius: 10,
     height: 20,
     justifyContent: 'center',
     position: 'absolute',
-    right: 0,
-    top: -5,
+    right: -10,
+    top: -10,
     width: 20,
   },
-  cartText: { color: 'white', fontSize: 12 },
-  icon: { height: 32, marginLeft: -16, width: 32,
-  },
+  cartText: { color: PrimaryColors.White, fontSize: 12 },
+  container: { backgroundColor: PrimaryColors.Black },
+  iconBack: { height: 28, width: 28 },
+  iconCart: { height: 28, width: 28 },
 })

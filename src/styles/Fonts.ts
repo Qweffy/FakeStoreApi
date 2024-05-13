@@ -14,16 +14,15 @@ const h2Headline: TextStyle = {
 }
 
 const h3Headline: TextStyle = {
-  fontFamily: 'Nunito',
   fontWeight: '300',
-  fontSize: 48,
+  fontSize: 30,
   letterSpacing: 0,
 }
 
 
 const h4Headline: TextStyle = {
   fontWeight: 'bold',
-  fontSize: 34,
+  fontSize: 24,
   letterSpacing: 0,
 }
 

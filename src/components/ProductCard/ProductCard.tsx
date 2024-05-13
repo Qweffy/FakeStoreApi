@@ -17,7 +17,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Card onPress={navigateToProductDetail} style={styles.container}>
       <View style={styles.productContainer}>
-        <Image source={{ uri: product.image }} style={styles.image} />
+        <Image source={{ uri: product.image }} style={styles.image} resizeMode={'contain'} />
         <View style={styles.descriptionContainer}>
           <Text style={styles.title} numberOfLines={1}>{product.title}</Text>
           <Text style={styles.price}>$ {product.price}</Text>

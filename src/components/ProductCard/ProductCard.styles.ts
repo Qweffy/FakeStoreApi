@@ -1,7 +1,7 @@
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { PrimaryColors } from '@styles/Colors'
 import { bodyBold, h5Headline } from '@styles/Fonts'
-import { mediumSpace } from '@styles/Spacing'
+import { mediumSpace, smallSpace, xSmallSpace } from '@styles/Spacing'
 
 type ProductCardStyleType = {
   container: ViewStyle
@@ -14,13 +14,12 @@ type ProductCardStyleType = {
 
 export default StyleSheet.create<ProductCardStyleType>({
   container: {
+    backgroundColor: PrimaryColors.White,
     borderBottomColor: PrimaryColors.LightGray,
     borderBottomWidth: 1,
-    elevation: 3,
-    margin: 12,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+    borderWidth: 0,
+    marginBottom: xSmallSpace,
+    marginHorizontal: smallSpace,
   },
   descriptionContainer: { flex: 1, justifyContent: 'space-between', marginLeft: mediumSpace },
   image: {

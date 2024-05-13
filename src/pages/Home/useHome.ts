@@ -9,7 +9,7 @@ export const useHome = () => {
   const dispatch = useDispatch()
   const { data: categoriesData, isError: isCategoriesError, error: categoriesError } = useGetCategoriesQuery()
   const categories: string[] = useSelector(selectAllCategories)
-  const [displayLimit, setDisplayLimit] = useState<number>(5)
+  const [displayLimit, setDisplayLimit] = useState<number>(10)
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const displayedProducts = useProductFilter(selectedCategory, displayLimit)
 

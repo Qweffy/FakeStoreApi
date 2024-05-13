@@ -30,7 +30,7 @@ const h4Headline: TextStyle = {
 
 const h5Headline: TextStyle = {
   fontWeight: 'bold',
-  fontSize: 24,
+  fontSize: 20,
   letterSpacing: 0,
 }
 

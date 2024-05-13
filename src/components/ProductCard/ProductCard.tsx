@@ -1,6 +1,6 @@
 import React from 'react'
-import { Layout, Text, Card } from '@ui-kitten/components'
-import { Image } from 'react-native'
+import { Text, Card } from '@ui-kitten/components'
+import { Image, View } from 'react-native'
 import styles from './ProductCard.styles'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
@@ -15,11 +15,14 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   }
 
   return (
-    <Card onPress={navigateToProductDetail} style={styles.card}>
-      <Layout style={styles.collapsedLayout}>
+    <Card onPress={navigateToProductDetail} style={styles.container}>
+      <View style={styles.productContainer}>
         <Image source={{ uri: product.image }} style={styles.image} />
-        <Text style={styles.title} numberOfLines={1}>{product.title}</Text>
-      </Layout>
+        <View style={styles.descriptionContainer}>
+          <Text style={styles.title} numberOfLines={1}>{product.title}</Text>
+          <Text style={styles.price}>$ {product.price}</Text>
+        </View>
+      </View>
     </Card>
   )
 }

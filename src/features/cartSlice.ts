@@ -7,7 +7,6 @@ interface CartState {
   isLoading: boolean;
 }
 
-
 const initialState: CartState = {
   products: [],
   cartItemCount: 0,

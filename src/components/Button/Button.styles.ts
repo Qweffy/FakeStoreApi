@@ -6,10 +6,7 @@ import { mediumSize } from '@styles/Size'
 type ButtonStyleType = {
   buttonContainer: ViewStyle
   button: ViewStyle
-  disabledButton: ViewStyle
-  disabledLabel: TextStyle
   buttonLabel: TextStyle
-  spinner: TextStyle
 }
 
 export default StyleSheet.create<ButtonStyleType>({
@@ -31,15 +28,5 @@ export default StyleSheet.create<ButtonStyleType>({
   buttonLabel: {
     ...bodyRegular,
     color: PrimaryColors.White,
-  },
-  disabledButton: {
-    backgroundColor: PrimaryColors.LightGray,
-  },
-  disabledLabel: {
-    color: PrimaryColors.Black,
-  },
-  spinner: {
-    color: PrimaryColors.White,
-    marginRight: 8,
   },
 })

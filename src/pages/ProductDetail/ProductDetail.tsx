@@ -15,6 +15,7 @@ import Button from '@components/Button'
 export const ProductDetail = ({ route, navigation }: ProductDetailProps) => {
   const { productId } = route.params
   const product = useSelector((state: RootState) => selectProductById(state, productId))
+  const isLoading = useSelector((state: RootState) => state.cart.isLoading)
   const dispatch = useDispatch()
 
   const handleAddToCart = () => {
@@ -42,7 +43,12 @@ export const ProductDetail = ({ route, navigation }: ProductDetailProps) => {
           </View>
         )}
       </ScrollView>
-      <Button containerStyles={{ margin: mediumSpace }} label={'Add to Cart'} onPress={handleAddToCart} />
+      <Button
+        containerStyles={{ margin: mediumSpace }}
+        label={'Add to Cart'}
+        onPress={handleAddToCart}
+        isLoading={isLoading}
+      />
     </SafeAreaView>
   )
 }

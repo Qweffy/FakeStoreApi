@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { TopNavigation, TopNavigationAction, Icon, Text } from '@ui-kitten/components'
 import { NavigationProp, useNavigation, useNavigationState } from '@react-navigation/native'
 import { RootStackParamList } from '@models/navigationTypes'

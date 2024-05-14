@@ -7,6 +7,7 @@ import styles from './Cart.styles'
 import { useDispatch } from 'react-redux'
 import { addItem, removeItem } from '@features/cartSlice'
 import Button from '@components/Button'
+import { CartButtonsProp } from './Cart.types'
 
 export const CartItem = ({ item }: { item: CartProduct }) => {
   const dispatch = useDispatch()
@@ -58,7 +59,7 @@ export const CartFooter = ({ total }: { total: number }) => (
   </View>
 )
 
-export const CartButtons = ({ navigation }: { navigation: any }) => (
+export const CartButtons = ({ navigation }: CartButtonsProp) => (
   <View style={styles.buttonsContainer}>
     <Button label='Start Purchase' onPress={() => console.log('Initiate checkout')} />
     <Button label='Continue Shopping' onPress={() => navigation.goBack()} />

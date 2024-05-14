@@ -4,3 +4,5 @@ import { RootStackParamList } from '@models/navigationTypes'
 export type CartProps = {
   navigation: NavigationProp<RootStackParamList>;
 }
+
+export type CartButtonsProp = CartProps;

@@ -8,7 +8,7 @@ import styles from './Home.styles'
 import { TopNavigator } from '@navigation/navigators/TopNavigator'
 import { HomeProps } from './Home.types'
 
-export const Home = ({ navigation }:HomeProps) => {
+export const Home = ({ navigation }: HomeProps) => {
   const { categories, displayedProducts, handleLoadMore, handleCategoryChange, selectedCategory } = useHome()
 
   return (

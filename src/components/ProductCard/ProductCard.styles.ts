@@ -1,49 +1,39 @@
-import { StyleSheet } from 'react-native'
-import { brandColor } from '@styles/Colors'
-import { bodyBold, bodyRegular, h5Headline } from '@styles/Fonts'
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { PrimaryColors } from '@styles/Colors'
+import { bodyBold, h5Headline } from '@styles/Fonts'
+import { mediumSpace, smallSpace, xSmallSpace } from '@styles/Spacing'
 
-export default StyleSheet.create({
-  card: {
-    backgroundColor: brandColor,
-    borderRadius: 10,
-    elevation: 3,
-    margin: 12,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+type ProductCardStyleType = {
+  container: ViewStyle
+  productContainer: ViewStyle
+  title: TextStyle
+  image: ImageStyle
+  price: TextStyle
+  descriptionContainer: ViewStyle
+}
+
+export default StyleSheet.create<ProductCardStyleType>({
+  container: {
+    backgroundColor: PrimaryColors.White,
+    borderBottomColor: PrimaryColors.LightGray,
+    borderBottomWidth: 1,
+    borderWidth: 0,
+    marginBottom: xSmallSpace,
+    marginHorizontal: smallSpace,
   },
-  collapsedLayout: {
-    alignItems: 'center',
-    backgroundColor: brandColor,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-  },
-  detailContainer: {
-    alignItems: 'center',
-    backgroundColor: brandColor,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    width: '100%',
-  },
-  icon: { height: 32, marginLeft: -16, width: 32 },
+  descriptionContainer: { flex: 1, justifyContent: 'space-between', marginLeft: mediumSpace },
   image: {
     borderRadius: 12,
     height: 75,
     marginRight: 16,
     width: 75,
   },
-  label: {
-    ...bodyBold,
-  },
-  text: {
-    ...bodyRegular,
+  price: { ...h5Headline, alignSelf: 'flex-end' },
+  productContainer: {
+    flexDirection: 'row',
   },
   title: {
     flexShrink: 1,
-    ...h5Headline,
-  },
-  value: {
-    ...bodyRegular,
-    marginLeft: 8,
+    ...bodyBold,
   },
 })

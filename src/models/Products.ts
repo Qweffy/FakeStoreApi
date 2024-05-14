@@ -1,9 +1,9 @@
-export interface ProductRating  {
+export interface ProductRating {
   rate: number;
   count: number;
 }
 
-export interface Product  {
+export interface Product {
   id: number;
   title: string;
   price: number;
@@ -15,9 +15,5 @@ export interface Product  {
 
 export interface CartProduct extends Product {
   quantity: number;
-}
-export interface CartState {
-  products: CartProduct[];
-  cartItemCount: number;
 }
 

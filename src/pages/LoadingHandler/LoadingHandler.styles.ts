@@ -1,9 +1,12 @@
-import { StyleSheet, ViewStyle } from 'react-native'
+import { ImageStyle, StyleSheet, ViewStyle } from 'react-native'
+import { PrimaryColors } from '@styles/Colors'
 
 type LoadingHandlerStyles = {
   container: ViewStyle
   splash: ViewStyle
   contentContainer: ViewStyle
+  modalStyle: ViewStyle
+  logoStyle: ImageStyle
 }
 
 export default StyleSheet.create<LoadingHandlerStyles>({
@@ -15,11 +18,13 @@ export default StyleSheet.create<LoadingHandlerStyles>({
   contentContainer: {
     alignItems: 'center',
     flex: 1,
-    left:0,
+    left: 0,
     position: 'absolute',
-    right:0,
+    right: 0,
     top: 100,
   },
+  logoStyle: { alignSelf: 'center', width: 300 },
+  modalStyle: { backgroundColor: PrimaryColors.Shadow },
   splash: {
     zIndex: 1000,
   },

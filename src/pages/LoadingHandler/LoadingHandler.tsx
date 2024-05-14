@@ -8,14 +8,13 @@ import { LoadingHandlerProps, SplashProps } from './LoadingHandler.types'
 import { useGetProductsQuery } from '@store/services/products'
 import { productsFailed, productsReceived } from '@features/productsSlice'
 import { getErrorMessage } from '@pages/LoadingHandler/LoadingHandler.utils'
-
-const Logo = require('../../assets/logo.png')
+import Logo from '@assets/logo.png'
 
 const Splash = ({ showSpinner }: SplashProps) => (
   <SafeAreaView style={[styles.splash, styles.contentContainer]} edges={['top', 'right', 'left']}>
-      <StatusBar barStyle={'dark-content'} />
-      <Image source={Logo} style={{ alignSelf: 'center' }} />
-      {showSpinner && <Spinner size="giant" />}
+    <StatusBar barStyle={'dark-content'} />
+    <Image source={Logo} style={styles.logoStyle} />
+    {showSpinner && <Spinner size='giant' status='danger' />}
   </SafeAreaView>
 )
 
@@ -26,7 +25,7 @@ export const LoadingHandler = ({ children }: LoadingHandlerProps) => {
     data: products,
     isLoading: isLoadingProducts,
     isError: isProductsError,
-    error: productsError
+    error: productsError,
   } = useGetProductsQuery()
 
   useEffect(() => {
@@ -44,10 +43,10 @@ export const LoadingHandler = ({ children }: LoadingHandlerProps) => {
       {isLoadingProducts && <Splash showSpinner={true} />}
       <Modal
         visible={errorModalVisible}
-        backdropStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.5)'}}
+        backdropStyle={styles.modalStyle}
         onBackdropPress={() => setErrorModalVisible(false)}>
         <Card disabled={true}>
-          <Text category="h6" status="danger">Error</Text>
+          <Text category='h6' status='danger'>Error</Text>
           <Text>{getErrorMessage(productsError)}</Text>
           <Button onPress={() => setErrorModalVisible(false)}>
             <Text>Dismiss</Text>

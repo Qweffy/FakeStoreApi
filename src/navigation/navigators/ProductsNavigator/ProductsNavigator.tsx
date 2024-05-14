@@ -8,7 +8,7 @@ import Cart from '@pages/Cart'
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
 export const ProductsNavigator = () => (
-  <Stack.Navigator screenOptions={{ headerShown: false }}>
+  <Stack.Navigator screenOptions={{ headerShown: false, animation: 'none' }}>
     <Stack.Screen name='Home' component={Home} />
     <Stack.Screen name='ProductDetail' component={ProductDetail} />
     <Stack.Screen name="Cart" component={Cart} />
